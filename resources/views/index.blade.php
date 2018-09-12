@@ -11,5 +11,11 @@
 
     <p>{{ $stan or 'not' }}</p>
 
+<ul>
+    @foreach($arr as $item)
+        <li>{{ $item }}</li>
+    @endforeach
+</ul>
+
 </body>
 </html>
