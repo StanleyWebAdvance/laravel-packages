@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53a4512e6aa7baaf9e99747568f29b56",
+    "content-hash": "a37b8545463e1207531ed480dacc41b0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1540,16 +1540,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.1.2",
+            "version": "v6.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8"
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8ddcb66ac10c392d3beb54829eef8ac1438595f4",
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4",
                 "shasum": ""
             },
             "require": {
@@ -1595,7 +1595,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-13T07:04:35+00:00"
+            "time": "2018-09-11T07:12:52+00:00"
         },
         {
             "name": "symfony/console",
@@ -2566,6 +2566,52 @@
                 "environment"
             ],
             "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "webadvance/kitapiv2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/StanleyWebAdvance/kitapiv2.git",
+                "reference": "4ee7359a3112185ebba973d3bc49391e90fbe9fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/StanleyWebAdvance/kitapiv2/zipball/4ee7359a3112185ebba973d3bc49391e90fbe9fe",
+                "reference": "4ee7359a3112185ebba973d3bc49391e90fbe9fe",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webadvance\\Kitapiv2\\KitServiceProvider"
+                    ],
+                    "aliases": {
+                        "Kitapiv2": "Webadvance\\Kitapiv2\\Kit"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webadvance\\Kitapiv2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nekrasov Vyacheslav",
+                    "email": "Stanley_23@mail.ru"
+                }
+            ],
+            "description": "api KIT",
+            "time": "2018-09-12T15:13:58+00:00"
         }
     ],
     "packages-dev": [
@@ -5293,7 +5339,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "stanleyvv/apikit": 20
+        "stanleyvv/apikit": 20,
+        "webadvance/kitapiv2": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

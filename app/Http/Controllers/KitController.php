@@ -17,7 +17,6 @@ class KitController extends Controller
         $function = new Is_city('www');
         $service = new KitService();
 
-        dd($service->responsePost($function));
 
 //        return view('index', [
 //
