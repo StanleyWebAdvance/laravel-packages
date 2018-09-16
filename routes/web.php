@@ -11,4 +11,10 @@
 |
 */
 
-Route::get('/', 'KitController@index');
+Route::group( ['middleware' => 'guest'], function ()
+{
+    Route::get('/', 'KitController@index');
+    Route::post('/', 'KitController@calculate')->name('calculate');
+});
+
+

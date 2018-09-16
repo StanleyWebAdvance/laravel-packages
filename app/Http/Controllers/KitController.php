@@ -2,26 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use Hamcrest\Core\Is;
-use Illuminate\Http\Request;
-use Stanleyvv\Apikit\Functions\Get_city_list;
-use Stanleyvv\Apikit\Functions\Is_city;
-use Stanleyvv\Apikit\Functions\Price_order;
-use Stanleyvv\Apikit\KitService;
-
+use App\Http\Requests\KitRequest;
+use Webadvance\Kitapiv2\KitService;
+use Webadvance\Kitapiv2\Order\Calculate;
+use Webadvance\Kitapiv2\Order\Currency;
+use Webadvance\Kitapiv2\Order\Insurance;
+use Webadvance\Kitapiv2\Tdd\City;
 
 class KitController extends Controller
 {
     public function index()
     {
-        $function = new Is_city('www');
         $service = new KitService();
 
+        $insurance = $service->post(new Insurance());
 
-//        return view('index', [
-//
-//            'stan' => $service->response($function)
-//        ]);
+        return view('index', [
+
+            'cities' => $service->post(new City()),
+            'currencies' => $service->post(new Currency()),
+            'insurance' => $insurance->agent,
+            'price' => 0,
+        ]);
+    }
+
+    public function calculate(KitRequest $request)
+    {
+        $service = new KitService();
+
+        $result = $service->post((new Calculate($request->all())));
+
+        $insurance = $service->post(new Insurance());
+
+        return view('index', [
+
+            'cities' => $service->post(new City()),
+            'currencies' => $service->post(new Currency()),
+            'insurance' => $insurance->agent,
+            'price' => $result[0]->standart->cost,
+        ]);
     }
 }
 

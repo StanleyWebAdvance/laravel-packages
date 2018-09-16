@@ -2573,12 +2573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StanleyWebAdvance/kitapiv2.git",
-                "reference": "4ee7359a3112185ebba973d3bc49391e90fbe9fe"
+                "reference": "b45bb4cc7786a87fd6f17a26b414c8cd9c51327d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StanleyWebAdvance/kitapiv2/zipball/4ee7359a3112185ebba973d3bc49391e90fbe9fe",
-                "reference": "4ee7359a3112185ebba973d3bc49391e90fbe9fe",
+                "url": "https://api.github.com/repos/StanleyWebAdvance/kitapiv2/zipball/b45bb4cc7786a87fd6f17a26b414c8cd9c51327d",
+                "reference": "b45bb4cc7786a87fd6f17a26b414c8cd9c51327d",
                 "shasum": ""
             },
             "require": {
@@ -2611,7 +2611,7 @@
                 }
             ],
             "description": "api KIT",
-            "time": "2018-09-12T15:13:58+00:00"
+            "time": "2018-09-16T02:28:09+00:00"
         }
     ],
     "packages-dev": [
