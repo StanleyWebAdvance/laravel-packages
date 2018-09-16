@@ -34,12 +34,20 @@ class KitController extends Controller
 
         $insurance = $service->post(new Insurance());
 
+        if (isset($result[0]->standart)) { $price = $result[0]->standart->cost; }
+        if (isset($result[0]->economy)) { $price = $result[0]->economy->cost; }
+        if (isset($result[0]->express)) { $price = $result[0]->express->cost; }
+        if (isset($result[0]->standard_courier)) { $price = $result[0]->standard_courier->cost; }
+        if (isset($result[0]->express_courier)) { $price = $result[0]->express_courier->cost; }
+        
+        $price = isset($price) ? $price : 'цена не пришла';
+
         return view('index', [
 
             'cities' => $service->post(new City()),
             'currencies' => $service->post(new Currency()),
             'insurance' => $insurance->agent,
-            'price' => $result[0]->standart->cost,
+            'price' => $price,
         ]);
     }
 }
