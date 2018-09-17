@@ -4,6 +4,13 @@ namespace Webadvance\Kitapiv2\Helpers;
 
 class ArrayHelp
 {
+    /**
+     *  преобразует данные о местах и позициях
+     *  в нужный вид
+     *
+     * @param $params
+     * @return mixed
+     */
     public static function getPlaces($params)
     {
 
@@ -22,18 +29,29 @@ class ArrayHelp
         return $params;
     }
 
+    /**
+     *  проверяем есть ли запрашиваемое поле
+     *  в ответе от сервера и возвращаем его
+     *
+     * @param $data
+     * @param $type
+     * @return mixed
+     * @throws \Exception
+     */
     public static function calculateResult($data, $type)
     {
         foreach ($data as $result) {
 
-            switch (key($result)) {
+            if (key($result) == $type) {
 
-                case $type :
-                    return $result->$type;
-
-                default :
-                    throw new \Exception(sprintf('метода %s в ответе не было, попробуйте %s', $type, key($result)));
+                return $result->$type;
             }
+
+            $key = key($result);
         }
+
+        $key = isset($key) ? $key : 'другой';
+
+        throw new \Exception(sprintf('метода %s в ответе не было, попробуйте %s', $type, $key));
     }
 }

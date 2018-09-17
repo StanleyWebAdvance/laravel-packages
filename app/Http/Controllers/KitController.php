@@ -24,6 +24,8 @@ class KitController extends Controller
     {
         $service = new KitService();
 
+        dd($service->calculate($request->all())->all());
+
         return view('index', [
 
             'cities' => $service->cityTdd()->all(),
