@@ -6,6 +6,8 @@ use Webadvance\Kitapiv2\Helpers\Validation;
 
 abstract class FunctionClass implements FunctionInterface
 {
+    protected $response;
+
     protected $uri;
 
     protected $params = [];
@@ -33,5 +35,15 @@ abstract class FunctionClass implements FunctionInterface
     public function params()
     {
         return $this->params;
+    }
+
+    public function all()
+    {
+        return $this->response;
+    }
+
+    public function setResponse($data)
+    {
+        $this->response = $data;
     }
 }

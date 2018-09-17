@@ -44,5 +44,28 @@ class Calculate extends FunctionClass
         $this->params = ArrayHelp::getPlaces($this->params);
     }
 
+    public function standart()
+    {
+        return ArrayHelp::calculateResult($this->response, 'standart');
+    }
 
+    public function economy()
+    {
+        return ArrayHelp::calculateResult($this->response, 'economy');
+    }
+
+    public function express()
+    {
+        return ArrayHelp::calculateResult($this->response, 'express');
+    }
+
+    public function standard_courier()
+    {
+        return ArrayHelp::calculateResult($this->response, 'standard_courier');
+    }
+
+    public function express_courier()
+    {
+        return ArrayHelp::calculateResult($this->response, 'express_courier');
+    }
 }

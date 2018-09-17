@@ -21,4 +21,19 @@ class ArrayHelp
 
         return $params;
     }
+
+    public static function calculateResult($data, $type)
+    {
+        foreach ($data as $result) {
+
+            switch (key($result)) {
+
+                case $type :
+                    return $result->$type;
+
+                default :
+                    throw new \Exception(sprintf('метода %s в ответе не было, попробуйте %s', $type, key($result)));
+            }
+        }
+    }
 }

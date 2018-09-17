@@ -3,7 +3,19 @@
 namespace Webadvance\Kitapiv2;
 
 use GuzzleHttp\Client;
+use Webadvance\Kitapiv2\Geography\Email;
+use Webadvance\Kitapiv2\Geography\Phone;
+use Webadvance\Kitapiv2\Geography\Schedule;
+use Webadvance\Kitapiv2\Geography\ScheduleGroup;
 use Webadvance\Kitapiv2\helpers\StringHelp;
+use Webadvance\Kitapiv2\Order\Calculate;
+use Webadvance\Kitapiv2\Order\Currency;
+use Webadvance\Kitapiv2\Order\Insurance;
+use Webadvance\Kitapiv2\Order\Service;
+use Webadvance\Kitapiv2\Order\Status;
+use Webadvance\Kitapiv2\Tdd\City;
+use Webadvance\Kitapiv2\Tdd\Country;
+use Webadvance\Kitapiv2\Tdd\Region;
 
 class KitService
 {
@@ -27,7 +39,7 @@ class KitService
         ]);
     }
 
-    public function post(FunctionInterface $function)
+    private function post(FunctionInterface $function)
     {
         $content = $this->client->request('POST', $function->uri(),
             [
@@ -37,10 +49,12 @@ class KitService
 
         $content = StringHelp::checkC($content);
 
-        return json_decode($content);
+        $function->setResponse(json_decode($content));
+
+        return $function;
     }
 
-    public function json(FunctionInterface $function)
+    private function json(FunctionInterface $function)
     {
         $content = $this->client->request('PUT', $function->uri(),
             [
@@ -50,6 +64,73 @@ class KitService
 
         $content = StringHelp::checkC($content);
 
-        return json_decode($content);
+        $function->setResponse(json_decode($content));
+
+        return $function;
+    }
+
+    public function cityTdd(array $params = array())
+    {
+        return $this->post(new City($params));
+    }
+
+    public function country(array $params = array())
+    {
+        return $this->post(new Country($params));
+    }
+
+    public function Region(array $params = array())
+    {
+        return $this->post(new Region($params));
+    }
+
+    public function currency(array $params = array())
+    {
+        return $this->post(new Currency($params));
+    }
+
+    public function insurance(array $params = array())
+    {
+        return $this->post(new Insurance($params));
+    }
+
+    public function calculate(array $params = array())
+    {
+        return $this->post(new Calculate($params));
+    }
+
+    public function service(array $params = array())
+    {
+        return $this->post(new Service($params));
+    }
+
+    public function status(array $params = array())
+    {
+        return $this->post(new Status($params));
+    }
+
+    public function cityGeography(array $params = array())
+    {
+        return $this->post(new \Webadvance\Kitapiv2\Geography\City($params));
+    }
+
+    public function email(array $params = array())
+    {
+        return $this->post(new Email($params));
+    }
+
+    public function phone(array $params = array())
+    {
+        return $this->post(new Phone($params));
+    }
+
+    public function schedule(array $params = array())
+    {
+        return $this->post(new Schedule($params));
+    }
+
+    public function scheduleGroup(array $params = array())
+    {
+        return $this->post(new ScheduleGroup($params));
     }
 }
