@@ -9,8 +9,7 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "stanleyvv/apikit": "dev-master",
-        "webadvance/kitapiv2": "dev-master"
+        "wstanley/kitapi": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
