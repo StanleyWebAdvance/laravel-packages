@@ -10,11 +10,22 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('order') }}" method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-success">Создать</button>
+                </form>
+            </div>
+        </div>
+
         {{--<div class="row">--}}
             {{--@include('layout.errors')--}}
         {{--</div>--}}
 
-        <form action="{{route('calculate')}}" method="post">
+        {{--{{route('calculate')}}--}}
+
+        <form action="" method="post">
             {{ csrf_field() }}
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -219,6 +230,8 @@
             <button type="submit" class="btn btn-success">Расчитать</button>
 
         </form>
+
+
 
     </div>
 

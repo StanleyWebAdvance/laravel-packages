@@ -2527,12 +2527,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/VVStanley/laravel-kit-api.git",
-                "reference": "55dce808e2300c411437292b7b8e52ef3d2a189a"
+                "reference": "162e520e64eba4c7dacf8efd0a45c373e07cfdc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VVStanley/laravel-kit-api/zipball/55dce808e2300c411437292b7b8e52ef3d2a189a",
-                "reference": "55dce808e2300c411437292b7b8e52ef3d2a189a",
+                "url": "https://api.github.com/repos/VVStanley/laravel-kit-api/zipball/162e520e64eba4c7dacf8efd0a45c373e07cfdc2",
+                "reference": "162e520e64eba4c7dacf8efd0a45c373e07cfdc2",
                 "shasum": ""
             },
             "require": {
@@ -2565,7 +2565,7 @@
                 }
             ],
             "description": "api KIT",
-            "time": "2018-09-30T05:15:15+00:00"
+            "time": "2018-10-02T08:10:21+00:00"
         }
     ],
     "packages-dev": [
