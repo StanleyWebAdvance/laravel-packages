@@ -32,9 +32,22 @@ class KitController extends Controller
             'city_pickup_code' => '660000100000',
             'city_delivery_code' => '000000000001',
             'type' => 1,
-            'declared_price' => 1000,
-            'customer' => [],
-            'sender' => [],
+            'declared_price' => 500,
+//            'insurance' => true,
+            'customer' => [
+
+                'debitor_type' => 1,
+
+                'country_code'          => '1',
+                'real_country'          => '1',
+                'real_city'             => '1',
+                'real_street'           => '1',
+                'real_house'            => '1',
+
+                'real_contact_name'     => '1',
+                'real_contact_phone'    => '1',
+            ],
+            'sender' => 'rrr',
             'receiver' => [],
             "count_place" => [
                 0 => "1"
